@@ -28,7 +28,6 @@ return {
       "markdown",
       "markdown_inline",
       "php",
-      "python",
       "query",
       "regex",
       "tsx",
