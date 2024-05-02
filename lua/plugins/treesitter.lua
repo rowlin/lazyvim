@@ -25,6 +25,7 @@ return {
       "javascript",
       "json",
       "lua",
+      "http",
       "markdown",
       "markdown_inline",
       "php",
