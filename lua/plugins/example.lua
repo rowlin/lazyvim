@@ -196,6 +196,8 @@ return {
 
   { import = "pocco81/auto-save.nvim" },
 
+  { import = "editorconfig/editorconfig-vim" },
+
   -- use mini.starter instead of alpha
   { import = "lazyvim.plugins.extras.ui.mini-starter" },
 
