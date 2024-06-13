@@ -19,11 +19,36 @@ return {
         blade = { "blade-formatter", "rustywind" },
         python = { "black" },
         javascript = { "prettierd" },
+        ["typescript"] = { "prettier" },
+        ["vue"] = { "prettier" },
+        ["css"] = { "prettier" },
+        ["scss"] = { "prettier" },
+        ["less"] = { "prettier" },
+        ["html"] = { "prettier" },
+        ["json"] = { "prettier" },
+        ["jsonc"] = { "prettier" },
+        ["yaml"] = { "prettier" },
+        ["markdown"] = { "prettier" },
+        ["markdown.mdx"] = { "prettier" },
+        ["graphql"] = { "prettier" },
+        ["handlebars"] = { "prettier" },
       },
       -- LazyVim will merge the options you set here with builtin formatters.
       -- You can also define any custom formatters here.
       ---@type table<string, conform.FormatterConfigOverride|fun(bufnr: integer): nil|conform.FormatterConfigOverride>
       formatters = {
+        prettier = {
+          condition = function(_, ctx)
+            if not needs_config then
+              return true
+            end
+            if enabled[ctx.filename] == nil then
+              vim.fn.system({ "prettier", "--find-config-path", ctx.filename })
+              enabled[ctx.filename] = vim.v.shell_error == 0
+            end
+            return enabled[ctx.filename]
+          end,
+        },
         injected = { options = { ignore_errors = true } },
         -- # Example of using dprint only when a dprint.json file is present
         -- dprint = {
