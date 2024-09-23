@@ -1,9 +1,8 @@
 return {
-  -- Configure LazyVim to load gruvbox
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin-mocha",
-    },
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = { style = "storm" },
   },
 }
