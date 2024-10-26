@@ -18,7 +18,7 @@ return {
     event = { "VeryLazy" },
     -- config = true,
     opts = {
-      lsp_server = "intelephense",
+      lsp_server = "phpactor",
       features = {
         null_ls = { enable = false },
         route_info = {
@@ -38,7 +38,7 @@ return {
     },
     ft = { "blade", "php" }, -- optional, improves startup time
     opts = {
-      close_tag_on_complete = true, -- default: true
+      close_tag_on_complete = false, -- default: true
     },
   },
   -- Add neotest-pest plugin for running PHP tests.

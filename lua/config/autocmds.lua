@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd({ "InsertLeave" }, {
   command = "silent! wall",
   nested = true,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.md", ".env" },
+  command = "lua vim.diagnostic.disable()",
+  nested = false,
+})
+
 ----
 --vim.api.nvim_create_autocmd({ "TextChangedI", "TextChangedP" }, {
 --  callback = function()
