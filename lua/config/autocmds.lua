@@ -16,6 +16,22 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   nested = false,
 })
 
+---------------------------------
+-- Floating diagnostics message
+---------------------------------
+vim.diagnostic.config({
+  float = { source = nil, border = "single" },
+  virtual_text = false,
+  signs = true,
+})
+
+--------------------------------
+-- Auto commands
+---------------------------------
+vim.api.nvim_create_autocmd({ "CursorHold"}, {
+  -- pattern = {"*"},
+  command = "lua vim.diagnostic.open_float(nil, {focus=false})",
+})
 ----
 --vim.api.nvim_create_autocmd({ "TextChangedI", "TextChangedP" }, {
 --  callback = function()

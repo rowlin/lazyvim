@@ -7,6 +7,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+vim.opt.iskeyword:append("$")
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -14,7 +16,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.coding.yanky" }, -- import any extras modules here
     { import = "lazyvim.plugins.extras.editor.refactoring" },
     { import = "lazyvim.plugins.extras.coding.mini-surround" },
-    { import = "lazyvim.plugins.extras.coding.codeium" },
     -- { import = "lazyvim.plugins.extras.coding.copilot" },
     -- import/override with your plugins
     { import = "plugins" },

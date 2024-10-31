@@ -1,7 +1,7 @@
 return {  -- lazy
     'ccaglak/namespace.nvim',
     keys = {
-        { "<leader>la", "<cmd>Php classes<cr>"},
+        { "<leader>lC", "<cmd>Php classes<cr>"},
         { "<leader>lc", "<cmd>Php class<cr>"},
         { "<leader>ln", "<cmd>Php namespace<cr>"},
         { "<leader>ls", "<cmd>Php sort<cr>"},

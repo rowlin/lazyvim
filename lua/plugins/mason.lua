@@ -22,7 +22,7 @@ return {
       "shellcheck",
       "phpactor",
       "shfmt",
-      -- "intelephense",
+      "intelephense",
       "php-cs-fixer",
     },
     automatic_installation = true,

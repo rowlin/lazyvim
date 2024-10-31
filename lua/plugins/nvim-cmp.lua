@@ -1,5 +1,14 @@
 return {
   "nvim-cmp",
+  dependencies = {
+    -- codeium
+    {
+      "Exafunction/codeium.nvim",
+      cmd = "Codeium",
+      build = ":Codeium Auth",
+      opts = {},
+    },
+  },
   opts = function(_, opts)
     table.insert(opts.sources, 1, {
       name = "codeium",
@@ -11,7 +20,7 @@ return {
       local line, col = unpack(vim.api.nvim_win_get_cursor(0))
       return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
     end
-  -- original LazyVim kind icon formatter
+    -- original LazyVim kind icon formatter
     local format_kinds = opts.formatting.format
     opts.formatting.format = function(entry, item)
       format_kinds(entry, item) -- add icons
