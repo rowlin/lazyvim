@@ -29,6 +29,35 @@ return {
 
     local cmp = require("cmp")
 
+    local function confirmDone(evt)
+      local context = evt.entry.context
+      if context.filetype ~= "php" then
+        return
+      end
+
+      if vim.startswith(context.cursor_after_line, "(") then
+        return
+      end
+
+      local endRange = evt.entry.source_insert_range["end"]
+      vim.treesitter.get_parser(context.bufnr):parse({ endRange.line, endRange.line })
+      local node = assert(vim.treesitter.get_node({ pos = { endRange.line, endRange.character - 1 } }))
+
+      local parent = node:parent()
+
+      if not parent then
+        return
+      end
+
+      if not vim.tbl_contains({ "object_creation_expression", "attribute" }, parent:type()) then
+        return
+      end
+
+      vim.api.nvim_feedkeys("(", "i", false)
+    end
+
+    cmp.event:on('confirm_done', confirmDone)
+
     opts.mapping = vim.tbl_extend("force", opts.mapping, {
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then

@@ -1,9 +1,9 @@
-local util = require 'lspconfig.util'
+local util = require("lspconfig.util")
 
 return {
   default_config = {
-    cmd = { 'vscode-json-language-server', '--stdio' },
-    filetypes = { 'json', 'jsonc' },
+    cmd = { "vscode-json-language-server", "--stdio" },
+    filetypes = { "json", "jsonc" },
     init_options = {
       provideFormatter = true,
     },

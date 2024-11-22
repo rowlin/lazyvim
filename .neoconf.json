@@ -6,7 +6,16 @@
     }
   },
   "neoconf": {
-    "plugins": {
+    "plugins": { 
+      "jsonls": {
+        "enabled": true
+      },
+      "vetur": {
+        "enabled": true
+      },
+      "vtsls": {
+        "enabled": true
+      }
     }
-  }
+  } 
 }

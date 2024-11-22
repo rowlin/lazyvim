@@ -3,7 +3,6 @@
 -- Add any additional options here
 
 vim.g.lazyvim_php_lsp = "intelephense"
-
 vim.g.autoformat = false
 
 -- vim.g.blade_nav = {
