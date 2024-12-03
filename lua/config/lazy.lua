@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath })
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
-
+vim.opt.laststatus = 3
 vim.opt.iskeyword:append("$")
 
 require("lazy").setup({
