@@ -1,11 +1,17 @@
 return {
   "Exafunction/codeium.nvim",
-  config = function()
-    require("codeium").setup({
-      enable_chat = true,
-    })
-  end,
   cmd = "Codeium",
+  event = "InsertEnter",
   build = ":Codeium Auth",
-  opts = {},
+  opts = {
+    enable_cmp_source = vim.g.ai_cmp,
+    virtual_text = {
+      enabled = not vim.g.ai_cmp,
+      key_bindings = {
+        accept = true, -- handled by nvim-cmp / blink.cmp
+        next = "<M-]>",
+        prev = "<M-[>",
+      },
+    },
+  },
 }

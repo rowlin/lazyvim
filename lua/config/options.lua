@@ -4,7 +4,7 @@
 
 vim.g.lazyvim_php_lsp = "intelephense"
 vim.g.autoformat = false
-
+vim.g.lazyvim_picker = "fzf"
 -- vim.g.blade_nav = {
 --   laravel_componets = {
 --    "resources/views/common",
