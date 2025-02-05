@@ -34,12 +34,12 @@ return {
         configured_servers_only = true,
       },
       -- configures lua_ls to get completion of lspconfig server settings
-      lua_ls = {
-        -- by default, lua_ls annotations are only enabled in your neovim config directory
-        enabled_for_neovim_config = true,
-        -- explicitly enable adding annotations. Mostly relevant to put in your local .nvim.settings.json file
-        enabled = false,
-      },
+      -- lua_ls = {
+      --   -- by default, lua_ls annotations are only enabled in your neovim config directory
+      --   enabled_for_neovim_config = true,
+      --   -- explicitly enable adding annotations. Mostly relevant to put in your local .nvim.settings.json file
+      --   enabled = false,
+      -- },
       volar = {
         enabled = true,
       },

@@ -37,7 +37,7 @@ return {
     },
     ---@type table<string, conform.FormatterUnit[]>
     formatters_by_ft = {
-      lua = { "stylua" },
+      -- lua = { "stylua" },
       vue = { "prettier" }, --- "prettier", stop_after_first = true },
       sh = { "shfmt" },
       php = { "php_cs_fixer", "pint", stop_after_first = true },

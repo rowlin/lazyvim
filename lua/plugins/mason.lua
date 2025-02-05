@@ -1,4 +1,5 @@
 return {
+
   "williamboman/mason.nvim",
   opts = {
     ui = {
@@ -13,11 +14,13 @@ return {
       "blade-formatter",
       "docker-compose-language-service",
       "dockerfile-language-server",
+      "lua-language-server",
       "vue-language-server",
       "dot-language-server",
       "js-debug-adapter",
       "html-lsp",
       "vetur-vls",
+      "shellcheck",
       "js-debug-adapter",
       "phpactor",
       "shfmt",

@@ -32,6 +32,7 @@ return {
             "javascript",
             "typescript",
             "vue",
+            "bash",
           },
         },
       },
